@@ -2,39 +2,37 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8" />
-    <title>我的小网页</title>
-    <!-- 引入外部 CSS -->
+    <title>Fouad's Private Kitchen</title>
     <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
 <header>
-    <h1>欢迎来到我的网页小程序</h1>
+    <h1>Fouad's Private Kitchen</h1>
 </header>
 
 <nav>
-    <a href="#home">首页</a>
-    <a href="#about">关于我</a>
-    <a href="#gallery">照片墙</a>
+    <a href="#home">home</a>
+
 </nav>
 
-<section id="home">
-    <h2>首页</h2>
-    <p>这是一个简单的网页示例，展示如何添加菜单和图片。</p>
+<section id="quiz">
+    <h2>MENU</h2>
+    <p>What do you want for dinner today?</p>
+    <form id="dinnerForm">
+        <label><input type="radio" name="dinner" value="shrimp"> a. Shrimp</label><br>
+        <label><input type="radio" name="dinner" value="salmon"> b. Salmon</label><br>
+        <label><input type="radio" name="dinner" value="beef"> c. Beef</label><br><br>
+        <button type="submit">Submit</button>
+    </form>
 </section>
 
-<section id="about">
-    <h2>关于我</h2>
-    <p>我喜欢学习编程和网页制作，欢迎大家多多交流！</p>
-</section>
+<script>
+    document.getElementById("dinnerForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // 阻止默认提交行为
+        window.location.href = "result.html"; // 跳转到结果页
+    });
+</script>
 
-<section id="gallery">
-    <h2>照片墙</h2>
-    <p>下面是一张网络图片示例：</p>
-    <img src="images/test.jpg" alt="示例图片">
-</section>
-
-<!-- 引入外部 JS -->
-<script src="js/script.js"></script>
 </body>
 </html>
